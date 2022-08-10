@@ -1,0 +1,50 @@
+.Navbar{
+    display: grid;
+    grid-template-columns: 10% 10% 80%;
+    grid-template-rows: 100%;
+    grid-template-areas: "logo items cart";
+    margin-top: 1em;
+}
+
+/* 
+.Navbar{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(193, 187, 187);
+    color: white;
+    padding: 1em;
+    width: 100%;
+    align-items: center;
+    height: 5em;
+} */
+
+.logoNavbar{
+    grid-area: logo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.logo{
+    width: 2.5vw;
+}
+ul{
+    grid-area: items;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+li{
+    padding-right: 5em;
+    list-style: none;
+}
+
+.CartWidget{
+    grid-area: cart;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 2em;
+    margin-bottom: 4em;    
+    
+}
