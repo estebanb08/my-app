@@ -1,11 +1,10 @@
-import widgetLogo from './assets/img/cart4.svg'
-
-function widget() {
-    return <>
-        <div className='CartWidget'>
-            <img src={widgetLogo}></img>
+import Cart from "../components/assets/img/cart4.svg"
+const CartWidget = () => {
+    return (
+        <div>
+            <img src={Cart}></img>
         </div>
-    </>
-}
+    );
+};
 
-export default widget;
+export default CartWidget;

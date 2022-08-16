@@ -1,11 +1,24 @@
-import Item from "./item";
+import Item from "./Item";
 
-const ItemList = ({ productsList }) => {
-  return (
-    <div>
-        {productsList.map((product) => <Item key={product.id} product={product} />)}
-    </div>
-  )
-}
- 
+const ItemList = ({ products }) => {
+    console.log("Los products en ItemList", products);
+    return (
+        <div>
+            {products.map((product) => {
+                return (
+                    <Item
+                        key={product.id}
+                        description={product.descripcion}
+                        category={product.categoria}
+                        image={product.image}
+                        price={product.price}
+                        stock={product.stock}
+                        title={product.title}
+                        id={product.id}
+                    />
+                );
+            })}
+        </div>
+    );
+};
 export default ItemList;

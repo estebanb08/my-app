@@ -1,38 +1,48 @@
-import React from 'react'
-import { useState } from 'react'
-import './css/itemCount.css'
-import charge from './assets/img/charge.jpg' 
+import { useState } from "react";
+import "../components/css/count.css"
 
-const ItemCount = ({initial, stock}) => {
-    const [count, setCount] = useState(initial)
+const ItemCount = ({ stock, initial }) => {
+    // Voy a sumar hasta que el número sea menor o igual que stock
+    // Voy a restar hasta que el número sea mayor o igual que el valor inicial
 
-    const sumar = () => {
-        if(count < stock){
-            setCount(count + 1)
+    // Declaro el hook para el contador
+    const [count, setCount] = useState(initial);
+    console.log("valor inicial ", count);
+
+    const addItem = () => {
+        const newValue = count + 1;
+        if (newValue <= stock) {
+            setCount(newValue);
         }
-    }              
-    const restar = () => {
-        if(count > initial)
-        setCount(count - 1)
-    }
+    };
 
+    const quitItem = () => {
+        const newValue = count - 1;
+        if (newValue >= initial) {
+            setCount(newValue);
+        }
+    };
+
+    const onAdd = () => {
+        const message = `Agregaste ${count} producto`;
+        //   Utilizo un condicional ternario (condicional) ? (true) : (false)
+        count === 1 ? alert(message) : alert(`${message}s`);
+    };
     return (
-        <div className='contador'>
-            <div>
-                <img className='chargeImage' src={charge}></img>
-            </div>
-            <div>
+        <>
+        <div className="countContainer">
+            <h3>STOCK</h3>
+            <div className="count">
+                {/* Acá sumamos (addItem) */}
+                <button onClick={addItem}>+</button>
                 <h3>{count}</h3>
+                {/* Acá restamos (quitItem) */}
+                <button onClick={quitItem}>-</button>
             </div>
-            <div className='botones'>
-                <button className='restar' onClick={restar}>-</button>
-            
-                <button className='sumar' onClick={sumar}>+</button>
-            </div>
-            
-
+            <button onClick={onAdd}>Agregar al Carrito</button>
         </div>
-    )
-}
-
-export default ItemCount
+            
+        </>
+    );
+};
+export default ItemCount;

@@ -1,42 +1,27 @@
-import logo from './assets/img/logo.png';
-import './css/navBar.css';
-import CartWidget from './cartWidget.js';
-import { Link  } from "react-router-dom"
+import CartWidget from "./CartWidget";
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
+const NavBar = () => {
+    return (
+        <Navbar bg="light" expand="lg">
+            <Container>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">   
+                        <Nav>Shop Funkis</Nav>
 
-
-
-const link1 = 'Inicio'
-const link2 = 'Comprar'
-const link3 = 'Nosotros'
-const titulo = 'Ecommerce'
-
-
-
-function NavBar () {
-    return <>
-        <div className='Navbar'>
-            <div className='logoNavbar'>
-                <img className='logo' src={logo}></img>
-                <h5>{titulo}</h5>
-            </div>
-            
-            <ul>
-                <li>{link1}</li>
-                <li>{link2}</li>
-                <li>{link3}</li>
-                <Link to="/category/Funko-POP">Funko POP</Link>
-                <Link to="/category/Funko-POP-2">Funko POP 2</Link>
-            </ul>
+    <br />
+                        <Link to="/category/Funko-POP">Funko POP /  </Link>
+                        
+                        <Link to="/category/Funko-POP-2">Funko POP 2 </Link>
+                        
+                            
+                    </Nav>
+                </Navbar.Collapse>
                 <CartWidget />
-        </div>
-
-    
-   
-
-    </>;
-
-    
-}
-
+            </Container>
+        </Navbar>
+    );
+};
 export default NavBar;

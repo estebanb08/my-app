@@ -1,0 +1,17 @@
+.itemCss{
+    text-align: center;
+    align-items: center;
+}
+
+.itemCss{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.itemEditBorder{
+    margin-top: 3em;
+    margin-left: 40em;
+    border: 1px solid black;
+    border-radius: 2em;
+}
