@@ -1,40 +1,14 @@
-// import React, {useState} from 'react'
-// import ItemCount from './itemCount'
-// import './css/item.css'
-
-
-// const Item = ({product}) => {
-//   // const[mensaje, setMensaje] = useState(false)
-//   const { img, name, description, price, stock } = product
-//   return(
-//     <div className='cardFather'>
-//       <div className="card">
-//         <img src={img} className="card-img-top" alt={name} />
-//           <div className="card-body">
-            
-//             <h5 className="card-title">{name}</h5>
-//             <p className="card-text">{description}</p>
-//             <p className="card-text">${price}</p>
-//             <p className="card-text">{stock}</p>
-//           </div>
-//       </div>
-//     </div>
-//   ) 
-// }
-
-
-// export default Item
-
 import { Link } from "react-router-dom";
 
-const Item = ({ description, price, stock, title, id }) => {
+const Item = ({ description, price, stock, title, image, id }) => {
     return (
         <Link to={`/item/${id}`}>
-            <div className="flex bg-info">
+            <div className="itemEditBorder bg-light" style={{ width: '25rem', color: 'black', textDecoration: 'none', marginBottom: '5em'}}>
                 <h3>{title}</h3>
+                <img src={image}></img>
                 <h2>{price}</h2>
                 <p>{description}</p>
-                <p>{stock}</p>
+                <p>Stock disponible: {stock}</p>
             </div>
         </Link>
     );

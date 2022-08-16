@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import ItemDetail from "./itemDetail";
+// import getOneProduct from "../services/getOneProduct";
+import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState([]); 
+    const [item, setItem] = useState([]);
     console.log("item", item);
     const { id } = useParams();
     console.log(id);
 
-    
-    const oneProduct = (id) => {
-        fetch("../../public/JSON/dataPage.json")
+    // const id = 1;
+    const getOneProduct = (id) => {
+        fetch("../JSON/DataList.json")
             .then((response) => response.json())
             .then((data) =>
                 setItem(data.filter((item) => item.id === parseInt(id))[0])
@@ -18,13 +19,17 @@ const ItemDetailContainer = () => {
     };
 
     useEffect(() => {
-        oneProduct(id);
+        getOneProduct(id);
     }, [id]);
 
-
+    // useEffect(() => {
+    //     getOneProduct
+    //         .then((res) => setItem(res))
+    //         .catch((err) => alert("Ha ocurrido un error", err));
+    // }, []);
 
     return (
-        <div className="itemDetailContainer">
+        <div>
             {item.length !== 0 ? (
                 <ItemDetail item={item} />
             ) : (
