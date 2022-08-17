@@ -11,48 +11,6 @@ const ItemListContainer = ({ greeting }) => {
     const { category } = useParams();
     console.log(category);
 
-    // Fetch - Then
-
-    // const getProductsFetch = () => {
-    //   fetch("../JSON/DataList.json")
-    //     .then((response) => response.json())
-    //     .then((data) => console.log("Respuesta Fetch: ", data));
-    // };
-
-    // Async - Await
-    // const getProductsAA = async () => {
-    //   const getData = await fetch("../JSON/DataList.json");
-    //   const dataResponse = await getData.json();
-    //   console.log("Respuesta de async/await", dataResponse);
-    // };
-
-    // Axios - Async / Await
-    // const getProductsAxios = async () => {
-    //   const getAxios = await axios.get("../JSON/DataList.json");
-    //   const responseAxios = getAxios.data;
-    //   console.log("Respuesta Axios: ", responseAxios);
-    //   setProducts(responseAxios);
-    // };
-
-    // const getProductsAxios = async () => {
-    //   const getAxios = await axios.get(
-    //     "https://jsonplaceholder.typicode.com/users"
-    //   );
-    //   const responseAxios = getAxios.data;
-    //   console.log(responseAxios);
-    // };
-    // useEffect(() => {
-    //   setTimeout(() => getProductsFetch(), 3000);
-    // }, []);
-
-    // useEffect(() => {
-    //   setTimeout(() => getProductsAA(), 2000);
-    // }, []);
-
-    // useEffect(() => {
-    //   setTimeout(() => getProductsAxios(), 1000);
-    // }, []);
-
     useEffect(() => {
         getProducts
             .then((res) => {

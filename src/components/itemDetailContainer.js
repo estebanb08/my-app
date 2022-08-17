@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import getOneProduct from "../services/getOneProduct";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
@@ -21,12 +20,6 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         getOneProduct(id);
     }, [id]);
-
-    // useEffect(() => {
-    //     getOneProduct
-    //         .then((res) => setItem(res))
-    //         .catch((err) => alert("Ha ocurrido un error", err));
-    // }, []);
 
     return (
         <div>
